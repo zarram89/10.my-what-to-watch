@@ -1,13 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import App from './components/app/app';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement,
-);
+const Setting = {
+  COUNT_CARDS: 20,
+};
 
-root.render(
+const promoFilm = {
+  name: 'The Grand Budapest Hotel',
+  genre: 'Drama',
+  dataRelease: new Date(2014, 4, 4),// mock date
+};
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App countCards={Setting.COUNT_CARDS} promoFilm={promoFilm}/>
   </React.StrictMode>,
-);
+  document.getElementById('root'));
